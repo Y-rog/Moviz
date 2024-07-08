@@ -32,6 +32,11 @@ class Director
         $this->movies = new ArrayCollection();
     }
 
+    public function __toString(): string
+    {
+        return $this->fist_name . ' ' . $this->last_name;
+    }
+
     public function getId(): ?int
     {
         return $this->id;
