@@ -3,14 +3,23 @@
 {% block title %}Hello PageController!{% endblock %}
 
 {% block body %}
+<div class="px-4 py-5 my-5 text-center">
+    <img class="d-block mx-auto mb-4" src="{{ asset('build/images/logo-moviz.png') }}" alt="" width="200">
+    <h1 class="display-5 fw-bold">Bienvenue sur Moviz!</h1>
+    <div class="col-lg-6 mx-auto">
+        <p class="lead mb-4">Votre destination ultime pour découvrir, débattre et apprécier le monde du cinéma. Que vous
+            soyez un cinéphile averti ou simplement à la recherche de votre prochain film préféré, nous avons ce qu'il
+            vous faut.</p>
+        <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+            <a href="" class="btn btn-primary btn-lg px-4 gap-3">Voir les films</a>
+        </div>
+    </div>
+</div>
 
-<div class="example-wrapper">
-    <h1>Hello {{ websiteName }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code>C:/Users/grego/Travail/Projets/Moviz/src/Controller/PageController.php</code></li>
-        <li>Your template at <code>C:/Users/grego/Travail/Projets/Moviz/templates/page/index.html.twig</code></li>
-    </ul>
+<h2>Les derniers films ajoutés</h2>
+<div class="row text-center">
+    {% for movie in movies %}
+    {% include "partials/movie_block.html.twig" %}
+    {% endfor %}
 </div>
 {% endblock %}

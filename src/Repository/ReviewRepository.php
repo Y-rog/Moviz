@@ -31,13 +31,14 @@ class ReviewRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?Review
-    //    {
-    //        return $this->createQueryBuilder('r')
-    //            ->andWhere('r.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+        public function getAveragerateByMovieId($movieId): float|null
+        {
+            return $this->createQueryBuilder('r')
+                ->select('AVG(r.rate) as average_rate')
+                ->where('r.movie = :movieId')
+                ->setParameter('movieId', $movieId)
+                ->getQuery()
+                ->getSingleScalarResult()
+            ;
+        }
 }

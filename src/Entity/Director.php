@@ -16,7 +16,7 @@ class Director
     private ?int $id = null;
 
     #[ORM\Column(length: 255)]
-    private ?string $fist_name = null;
+    private ?string $first_name = null;
 
     #[ORM\Column(length: 255)]
     private ?string $last_name = null;
@@ -34,7 +34,7 @@ class Director
 
     public function __toString(): string
     {
-        return $this->fist_name . ' ' . $this->last_name;
+        return $this->first_name . ' ' . $this->last_name;
     }
 
     public function getId(): ?int
@@ -42,14 +42,14 @@ class Director
         return $this->id;
     }
 
-    public function getFistName(): ?string
+    public function getFirstName(): ?string
     {
-        return $this->fist_name;
+        return $this->first_name;
     }
 
-    public function setFistName(string $fist_name): static
+    public function setFirstName(string $first_name): static
     {
-        $this->fist_name = $fist_name;
+        $this->first_name = $first_name;
 
         return $this;
     }
